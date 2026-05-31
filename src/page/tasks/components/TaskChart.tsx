@@ -1,3 +1,4 @@
+import { memo } from "react";
 import type { TaskNode } from "../task.type";
 const TaskChart: React.FC<{ nodes: TaskNode[] }> = ({ nodes }) => {
   const renderRows = (nodes: TaskNode[]) => {
@@ -117,4 +118,4 @@ const TaskChart: React.FC<{ nodes: TaskNode[] }> = ({ nodes }) => {
   );
 };
 
-export default TaskChart;
+export default memo(TaskChart);
