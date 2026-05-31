@@ -1,8 +1,9 @@
 import { Box } from "@mui/material";
 import type { DataList } from "../../../utils/buildHierarchy";
 import type { DataPositions, PositionNode } from "../../position/position.type";
+import { memo } from "react";
 
-const EmployeePositionChart = ({ nodes }: { nodes: PositionNode[] }) => {
+const EmployeePositionChart = memo(({ nodes }: { nodes: PositionNode[] }) => {
   return (
     <Box
       component="ul"
@@ -78,6 +79,6 @@ const EmployeePositionChart = ({ nodes }: { nodes: PositionNode[] }) => {
       })}
     </Box>
   );
-};
+});
 
 export default EmployeePositionChart;
