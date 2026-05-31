@@ -44,8 +44,8 @@ const Header = () => {
             sx={{
               "& .MuiBadge-badge": {
                 position: "absolute",
-                top: -5,
-                right: -5,
+                top: 5,
+                right: 3,
               },
             }}
           >
