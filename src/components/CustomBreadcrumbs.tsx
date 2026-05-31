@@ -2,10 +2,14 @@ import { useLocation } from "react-router-dom";
 import generateBreadcrumbs from "../utils/generateBreadcrumbs";
 import { Breadcrumbs, Link, Typography } from "@mui/material";
 import { Link as routeLink } from "react-router-dom";
+import { useMemo } from "react";
 
 const CustomBreadCrumbs: React.FC = () => {
   const location = useLocation();
-  const breadcrumbs = generateBreadcrumbs(location.pathname);
+  const breadcrumbs = useMemo(
+    () => generateBreadcrumbs(location.pathname),
+    [location.pathname],
+  );
   return (
     <Breadcrumbs
       aria-label="breadcrumb"
