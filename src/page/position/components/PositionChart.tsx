@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import type { PositionNode } from "../position.type";
-const PositionChart = ({ nodes }: { nodes: PositionNode[] }) => {
+import { memo } from "react";
+const PositionChart = memo(({ nodes }: { nodes: PositionNode[] }) => {
   return (
     <Box
       component="ul"
@@ -65,6 +66,6 @@ const PositionChart = ({ nodes }: { nodes: PositionNode[] }) => {
       ))}
     </Box>
   );
-};
+});
 
 export default PositionChart;
