@@ -60,7 +60,6 @@ const EmployeePositionChart = memo(({ nodes }: { nodes: PositionNode[] }) => {
                 overflow: "hidden",
                 textOverflow: "ellipsis",
                 cursor: "pointer",
-                transition: "all 0.2s",
                 "&:hover": {
                   bgcolor: "#f5f5f5",
                   borderColor: "#1976d2",
