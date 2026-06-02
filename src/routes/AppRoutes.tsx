@@ -30,7 +30,6 @@ const AppRoutes: React.FC = () => {
           ],
         },
         { path: "tasks", element: <TaskPage /> },
-        // { path: "*", element: <NotFoundPage /> },
       ],
     },
   ]);
