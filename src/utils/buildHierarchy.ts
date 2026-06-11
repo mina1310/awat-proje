@@ -1,11 +1,11 @@
 export type DataList<T> = T & { children: DataList<T>[] };
 
 const buildHierarchy = <
-  T extends { id: number | string; parentId: number | string | null },
+  U extends { id: number | string; parentId: number | string | null },
 >(
-  items: T[],
-): DataList<T>[] => {
-  const map = new Map<T["id"], DataList<T>>();
+  items: U[],
+): DataList<U>[] => {
+  const map = new Map<U["id"], DataList<U>>();
   const root = [];
   for (const item of items) {
     map.set(item.id, { ...item, children: [] });

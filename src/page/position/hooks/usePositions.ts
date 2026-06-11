@@ -14,11 +14,13 @@ const usePositions = () => {
     dispatch(getPositions());
   }, [dispatch]);
 
+  const positions = useMemo(
+    () => buildHierarchy<DataPositions>(positionsItems),
+    [positionsItems],
+  );
+
   return {
-    positions: useMemo(
-      () => buildHierarchy<DataPositions>(positionsItems),
-      [positionsItems],
-    ),
+    positions,
     loading,
     error,
   };

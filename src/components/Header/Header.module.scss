@@ -1,0 +1,65 @@
+.header {
+  border-bottom: 1px solid #e2e8f0;
+  backdrop-filter: blur(8px);
+}
+
+.toolbar {
+  min-height: 64px;
+  padding-inline: 24px !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  min-width: fit-content;
+  cursor: pointer;
+}
+
+.breadcrumbContainer {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+
+  padding-inline: 24px;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-width: fit-content;
+}
+
+.notification {
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.avatar {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.userName {
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .breadcrumbContainer {
+    justify-content: flex-start;
+    padding-inline: 12px;
+  }
+
+  .userName {
+    display: none;
+  }
+}
