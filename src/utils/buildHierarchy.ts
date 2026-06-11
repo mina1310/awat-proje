@@ -27,6 +27,7 @@ const buildHierarchy = <
     }
     parentIdNode.children.push(node);
   }
+  console.log({ root });
   return root;
 };
 export default buildHierarchy;

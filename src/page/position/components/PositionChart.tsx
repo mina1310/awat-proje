@@ -61,7 +61,7 @@ const PositionChart = memo(({ nodes }: { nodes: PositionNode[] }) => {
           >
             {node.title}
           </Box>
-          {node.children?.length > 0 && <PositionChart nodes={node.children} />}
+          {node.children.length > 0 && <PositionChart nodes={node.children} />}
         </li>
       ))}
     </Box>
