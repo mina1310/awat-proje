@@ -4,7 +4,7 @@ import {
   Navigate,
   RouterProvider,
 } from "react-router-dom";
-import RootLayout from "../components/RootLayout";
+import RootLayout from "../components/RootLayout/RootLayout";
 
 import OrganizationChartPage from "../page/organization/OrganizationChartPage";
 import DashboardPage from "../page/dashboard/DashboardPage";

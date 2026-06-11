@@ -75,7 +75,7 @@
 import { AppBar, Avatar, Badge, Box, Toolbar, Typography } from "@mui/material";
 
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import CustomBreadCrumbs from "../CustomBreadcrumbs";
+import CustomBreadCrumbs from "../CustomBreadcrumbs/CustomBreadcrumbs";
 
 import styles from "./Header.module.scss";
 

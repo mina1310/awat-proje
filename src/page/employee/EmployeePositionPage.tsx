@@ -1,8 +1,8 @@
 import usePositions from "../position/hooks/usePositions";
 import { useMemo } from "react";
 
-import EmployeePositionChart from "./components/EmployeePositionChart";
 import filteredPosition from "../../utils/filteredPosition";
+import EmployeePositionChart from "./components/EmployeePositionChart/EmployeePositionChart";
 
 const EmployeePositionPage = () => {
   const { positions, loading, error } = usePositions();
