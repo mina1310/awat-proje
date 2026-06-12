@@ -1,37 +1,13 @@
 [
-  {
-    "title": "مدیر عامل",
-    "id": 1,
-    "parentId": null,
-    "capacity": 1,
-    "organization": "آوات",
-    "status": "active",
-    "employees": [
-      {
-        "firstName": "مینا",
-        "lastName": "کاویانی",
-        "userName": "mk",
-        "mobileNumber": "09140853348",
-        "id": 1
-      }
-    ]
-  },
+  
   {
     "title": "قائم مقام مدیر عامل",
     "id": 2,
     "parentId": 1,
     "capacity": 1,
     "organization": "آوات",
-    "status": "active",
-    "employees": [
-      {
-        "firstName": "مریم",
-        "lastName": "کاویانی",
-        "userName": "mk1364",
-        "mobileNumber": "09139794810",
-        "id": 2
-      }
-    ]
+    "status": "active"
+    
   },
   {
     "title": "معاون مالی",
@@ -39,8 +15,8 @@
     "parentId": 1,
     "capacity": 1,
     "organization": "آوات",
-    "status": "active",
-    "employees": []
+    "status": "active"
+    
   },
   {
     "title": "حسابدار",
@@ -48,8 +24,8 @@
     "parentId": 3,
     "capacity": 1,
     "organization": "آوات",
-    "status": "active",
-    "employees": []
+    "status": "active"
+    
   },
   {
     "title": "معاون اداری",
@@ -57,16 +33,8 @@
     "parentId": 1,
     "capacity": 1,
     "organization": "آوات",
-    "status": "active",
-    "employees": [
-      {
-        "firstName": "سعید",
-        "lastName": "کاویانی",
-        "userName": "sk",
-        "mobileNumber": "09140853349",
-        "id": 7
-      }
-    ]
+    "status": "active"
+   
   },
   {
     "title": "کارشناس اداری",
@@ -74,16 +42,7 @@
     "parentId": 5,
     "capacity": 1,
     "organization": "آوات",
-    "status": "active",
-    "employees": [
-      {
-        "firstName": "جاوید",
-        "lastName": "کاویانی",
-        "userName": "jk",
-        "mobileNumber": "09130445810",
-        "id": 5
-      }
-    ]
+    "status": "active"
   },
   {
     "title": "معاون عملیات",
@@ -91,16 +50,8 @@
     "parentId": 1,
     "capacity": 1,
     "organization": "آوات",
-    "status": "active",
-    "employees": [
-      {
-        "firstName": "هلن",
-        "lastName": "کاویانی",
-        "userName": "hk",
-        "mobileNumber": "09140853121",
-        "id": 6
-      }
-    ]
+    "status": "active"
+    
   },
   {
     "title": "رییس واحد",
@@ -108,8 +59,8 @@
     "parentId": 7,
     "capacity": 1,
     "organization": "آوات",
-    "status": "active",
-    "employees": []
+    "status": "active"
+    
     
   },
   {
@@ -118,16 +69,17 @@
     "parentId": 8,
     "capacity": 1,
     "organization": "آوات",
-    "status": "active",
-    "employees": [
-      {
-        "firstName": "کارن",
-        "lastName": "کاویانی",
-        "userName": "Kk01",
-        "mobileNumber": "09140853353",
-        "id": 10
-      }
-    ]
+    "status": "active"
+    
+  },
+  {
+    "title": "مدیر عامل",
+    "id": 1,
+    "parentId": null,
+    "capacity": 1,
+    "organization": "آوات",
+    "status": "active"
+    
   },
   {
     "title": "کارشناس پروژه",
@@ -135,15 +87,7 @@
     "parentId": 9,
     "capacity": 1,
     "organization": "آوات",
-    "status": "active",
-    "employees": [
-      {
-        "firstName": "سهیل",
-        "lastName": "کاویانی",
-        "userName": "sk1384",
-        "mobileNumber": "09140853344",
-        "id": 8
-      }
-    ]
+    "status": "active"
+   
   }
 ]

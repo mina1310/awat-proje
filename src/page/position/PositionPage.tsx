@@ -1,8 +1,8 @@
 import PositionChart from "./components/PositionChart/PositionChart";
-import usePositions from "./hooks/usePositions";
+import useHierarchyPositions from "./hooks/useHierarchyPositions";
 
 const PositionPage = () => {
-  const { positions, loading, error } = usePositions();
+  const { positions, loading, error } = useHierarchyPositions();
   if (loading) return <div>loading...</div>;
   if (error) return <div>{error}</div>;
 
