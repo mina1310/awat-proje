@@ -155,14 +155,6 @@ export const theme = createTheme({
       },
     },
 
-    MuiDrawer: {
-      styleOverrides: {
-        paper: {
-          borderLeft: "1px solid #e2e8f0",
-        },
-      },
-    },
-
     MuiTextField: {
       defaultProps: {
         size: "small",
