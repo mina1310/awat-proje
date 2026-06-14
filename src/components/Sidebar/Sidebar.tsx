@@ -142,7 +142,7 @@ const menuItems = [
   },
 ];
 
-const Sidebar = () => {
+export const Sidebar = () => {
   return (
     <Drawer
       variant="permanent"
@@ -170,9 +170,9 @@ const Sidebar = () => {
                 key={item.path}
                 component={NavLink}
                 to={item.path}
-                className={({ isActive }) =>
-                  `${styles.menuItem} ${isActive ? styles.active : ""}`
-                }
+                // className={({ isActive }) =>
+                //   `${styles.menuItem} ${isActive ? styles.active : ""}`
+                // }
               >
                 <ListItemIcon className={styles.icon}>
                   <Icon />
@@ -187,5 +187,3 @@ const Sidebar = () => {
     </Drawer>
   );
 };
-
-export default Sidebar;

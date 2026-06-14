@@ -44,7 +44,7 @@ import { NavLink, Outlet, useLocation } from "react-router-dom";
 
 import styles from "./OrganizationChartPage.module.scss";
 
-const OrganizationChartPage = () => {
+export const OrganizationChartPage = () => {
   const location = useLocation();
 
   const currentTab = location.pathname.includes("/personal")
@@ -75,5 +75,3 @@ const OrganizationChartPage = () => {
     </Box>
   );
 };
-
-export default OrganizationChartPage;

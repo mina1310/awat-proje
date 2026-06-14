@@ -63,7 +63,7 @@ import generateBreadcrumbs from "../../utils/generateBreadcrumbs";
 
 import styles from "./CustomBreadcrumbs.module.scss";
 
-const CustomBreadCrumbs: React.FC = () => {
+export const CustomBreadCrumbs: React.FC = () => {
   const location = useLocation();
 
   const breadcrumbs = useMemo(
@@ -113,5 +113,3 @@ const CustomBreadCrumbs: React.FC = () => {
     </Breadcrumbs>
   );
 };
-
-export default CustomBreadCrumbs;

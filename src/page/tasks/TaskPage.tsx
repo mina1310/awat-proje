@@ -1,4 +1,4 @@
-import TaskChart from "./components/TaskChart/TaskChart";
+import { TaskChart } from "./components/TaskChart";
 import useTasks from "./hooks/useTasks";
 const TaskPage: React.FC = () => {
   const { tasks, error, loading } = useTasks();

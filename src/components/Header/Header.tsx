@@ -75,11 +75,11 @@
 import { AppBar, Avatar, Badge, Box, Toolbar, Typography } from "@mui/material";
 
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import CustomBreadCrumbs from "../CustomBreadcrumbs/CustomBreadcrumbs";
 
 import styles from "./Header.module.scss";
+import { CustomBreadCrumbs } from "../CustomBreadcrumbs";
 
-const Header = () => {
+export const Header = () => {
   return (
     <AppBar
       position="fixed"
@@ -137,5 +137,3 @@ const Header = () => {
     </AppBar>
   );
 };
-
-export default Header;

@@ -130,7 +130,7 @@ interface Props {
   nodes: TaskNode[];
 }
 
-const TaskChart = ({ nodes }: Props) => {
+export const TaskChart = memo(({ nodes }: Props) => {
   const renderRows = (nodes: TaskNode[]) => {
     return nodes.map((node) => (
       <li key={node.id} className={styles.listItem}>
@@ -184,6 +184,4 @@ const TaskChart = ({ nodes }: Props) => {
       <ul className={styles.list}>{renderRows(nodes)}</ul>
     </div>
   );
-};
-
-export default memo(TaskChart);
+});

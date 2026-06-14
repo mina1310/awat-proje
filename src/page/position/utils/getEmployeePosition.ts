@@ -1,5 +1,5 @@
+import type { EmployeeData } from "../../employee/employee.type";
 import type { DataPositions } from "../../position/position.type";
-import type { EmployeeData } from "../employee.type";
 
 export type PositionWithEmployee = DataPositions & {
   employees: { employeeId: number }[] | null;

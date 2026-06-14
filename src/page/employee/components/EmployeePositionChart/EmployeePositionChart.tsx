@@ -136,15 +136,15 @@ import { memo, useMemo } from "react";
 import type { DataList } from "../../../../utils/buildHierarchy";
 import styles from "./EmployeePositionChart.module.scss";
 
-import type { PositionWithEmployee } from "../../utils/getEmployeePosition";
 import type { EmployeeData } from "../../employee.type";
+import type { PositionWithEmployee } from "../../../position/utils/getEmployeePosition";
 
 type EmployeePositionChartProps = {
   nodes: DataList<PositionWithEmployee>[];
   employees: EmployeeData[];
 };
 
-const EmployeePositionChart = memo(
+export const EmployeePositionChart = memo(
   ({ nodes, employees }: EmployeePositionChartProps) => {
     const employeeMap = useMemo(
       () =>
@@ -186,5 +186,3 @@ const EmployeePositionChart = memo(
 );
 
 EmployeePositionChart.displayName = "EmployeePositionChart";
-
-export default EmployeePositionChart;

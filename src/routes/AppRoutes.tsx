@@ -4,15 +4,15 @@ import {
   Navigate,
   RouterProvider,
 } from "react-router-dom";
-import RootLayout from "../components/RootLayout/RootLayout";
 
-import OrganizationChartPage from "../page/organization/OrganizationChartPage";
-import DashboardPage from "../page/dashboard/DashboardPage";
+import { OrganizationChartPage } from "../page/organization/components";
+import { DashboardPage } from "../page/dashboard/components";
 import PositionPage from "../page/position/PositionPage";
 import EmployeePositionPage from "../page/employee/EmployeePositionPage";
 import TaskPage from "../page/tasks/TaskPage";
+import { RootLayout } from "../components/RootLayout";
 
-const AppRoutes: React.FC = () => {
+export const AppRoutes: React.FC = () => {
   const route = createBrowserRouter([
     {
       path: "/",
@@ -35,4 +35,3 @@ const AppRoutes: React.FC = () => {
   ]);
   return <RouterProvider router={route} />;
 };
-export default AppRoutes;

@@ -77,7 +77,7 @@ import type { PositionNode } from "../../position.type";
 
 import styles from "./PositionChart.module.scss";
 
-const PositionChart = memo(({ nodes }: { nodes: PositionNode[] }) => {
+export const PositionChart = memo(({ nodes }: { nodes: PositionNode[] }) => {
   return (
     <Box component="ul" className={styles.tree}>
       {nodes.map((node) => (
@@ -92,5 +92,3 @@ const PositionChart = memo(({ nodes }: { nodes: PositionNode[] }) => {
     </Box>
   );
 });
-
-export default PositionChart;

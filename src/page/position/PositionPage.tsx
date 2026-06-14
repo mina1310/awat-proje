@@ -1,4 +1,4 @@
-import PositionChart from "./components/PositionChart/PositionChart";
+import { PositionChart } from "./components/PositionChart";
 import useHierarchyPositions from "./hooks/useHierarchyPositions";
 
 const PositionPage = () => {

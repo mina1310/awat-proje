@@ -1,4 +1,4 @@
-import EmployeePositionChart from "./components/EmployeePositionChart/EmployeePositionChart";
+import { EmployeePositionChart } from "./components/EmployeePositionChart";
 import { usePersonnelChart } from "./hooks/usePersonnelChart";
 
 const EmployeePositionPage = () => {

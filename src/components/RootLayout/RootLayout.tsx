@@ -34,15 +34,14 @@
 // };
 // export default RootLayout;
 
-import Header from "../Header/Header";
-import Sidebar from "../Sidebar/Sidebar";
-
 import { Outlet } from "react-router-dom";
 import { Box, Container } from "@mui/material";
 
 import styles from "./RootLayout.module.scss";
+import { Header } from "../Header";
+import { Sidebar } from "../Sidebar";
 
-const RootLayout = () => {
+export const RootLayout = () => {
   return (
     <Box className={styles.layout}>
       <Header />
@@ -57,5 +56,3 @@ const RootLayout = () => {
     </Box>
   );
 };
-
-export default RootLayout;

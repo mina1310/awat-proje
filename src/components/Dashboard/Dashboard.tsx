@@ -38,7 +38,7 @@ import { Box, Paper, Typography } from "@mui/material";
 import { InfoOutlined as InfoIcon } from "@mui/icons-material";
 import styles from "./Dashboard.module.scss";
 
-const Dashboard = () => {
+export const Dashboard = () => {
   return (
     <Box className={styles.container}>
       <Paper className={styles.card}>
@@ -55,5 +55,3 @@ const Dashboard = () => {
     </Box>
   );
 };
-
-export default Dashboard;
