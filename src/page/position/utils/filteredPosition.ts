@@ -1,5 +1,5 @@
-import type { PositionWithEmployee } from "../page/employee/utils/getEmployeePosition";
-import type { DataList } from "./buildHierarchy";
+import type { DataList } from "../../../utils/buildHierarchy";
+import type { PositionWithEmployee } from "./getEmployeePosition";
 
 const filteredPosition = (
   nodes: DataList<PositionWithEmployee>[],
