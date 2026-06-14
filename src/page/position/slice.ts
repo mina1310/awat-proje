@@ -29,7 +29,7 @@ export const getPositions = createAsyncThunk<
     const data: DataPositions[] = await response.json();
     return data;
   } catch {
-    return thunkApi.rejectWithValue("data request was failed");
+    return thunkApi.rejectWithValue("position data request was failed");
   }
 });
 export const positionSlice = createSlice({

@@ -1,15 +1,24 @@
-import usePositions from "../position/hooks/usePositions";
-import { useMemo } from "react";
-
-import filteredPosition from "../../utils/filteredPosition";
 import EmployeePositionChart from "./components/EmployeePositionChart/EmployeePositionChart";
-import { useEmployees } from "./hooks/useEmployees";
+import { usePersonnelChart } from "./hooks/usePersonnelChart";
 
 const EmployeePositionPage = () => {
-  const result = useMemo(() => filteredPosition(positions), [positions]);
-  if (loading) return <div>loading...</div>;
-  if (error) return <div>{error}</div>;
+  const { personnelChartData, error, loading, employeeItems } =
+    usePersonnelChart();
+  if (loading.employee || loading.position) return <div>loading...</div>;
+  if (error.employee || error.position) {
+    return (
+      <div>
+        {error.employee && <p>employee error is:{error.employee}</p>}
+        {error.position && <p>position error is:{error.position}</p>}
+      </div>
+    );
+  }
 
-  return <EmployeePositionChart nodes={result} />;
+  return (
+    <EmployeePositionChart
+      nodes={personnelChartData}
+      employees={employeeItems}
+    />
+  );
 };
 export default EmployeePositionPage;

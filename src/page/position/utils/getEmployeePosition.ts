@@ -8,7 +8,7 @@ export type PositionWithEmployee = DataPositions & {
 export const getEmployeePosition = (
   positions: DataPositions[],
   employees: EmployeeData[],
-) => {
+): PositionWithEmployee[] => {
   const map = new Map<number, EmployeeData>();
   for (const item of employees) {
     for (let i = 0; i < item.positions.length; i++) {

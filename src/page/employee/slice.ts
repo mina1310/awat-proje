@@ -29,7 +29,7 @@ export const getEmployees = createAsyncThunk<
     const data: EmployeeData[] = await response.json();
     return data;
   } catch {
-    return thunkApi.rejectWithValue("data request was failed");
+    return thunkApi.rejectWithValue("employee data request was failed");
   }
 });
 export const employeeSlice = createSlice({

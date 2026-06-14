@@ -82,40 +82,109 @@
 
 // export default EmployeePositionChart;
 
+// import { Box } from "@mui/material";
+// import { memo, useMemo } from "react";
+
+// import type { DataList } from "../../../../utils/buildHierarchy";
+
+// import styles from "./EmployeePositionChart.module.scss";
+// import type { PositionWithEmployee } from "../../utils/getEmployeePosition";
+// import type { EmployeeData } from "../../employee.type";
+
+// const EmployeePositionChart = memo(
+//   ({
+//     nodes,
+//     employees,
+//   }: {
+//     nodes: DataList<PositionWithEmployee>[];
+//     employees: EmployeeData[];
+//   }) => {
+//     const employeeMap = useMemo(
+//       () => new Map(employees.map((employee) => [employee.id, employee])),
+//       [employees],
+//     );
+//     return (
+//       <Box component="ul" className={styles.tree}>
+//         {nodes.map((node: DataList<PositionWithEmployee>) => {
+//           const displayText =
+//             node.employees.length > 0
+//               ? `${node.title} (${node.employees[0].firstName} ${node.employees[0].lastName})`
+//               : node.title;
+
+//           return (
+//             <li key={node.id}>
+//               <Box className={styles.employeeNode} title={displayText}>
+//                 {displayText}
+//               </Box>
+
+//               {node.children?.length > 0 && (
+//                 <EmployeePositionChart nodes={node.children} />
+//               )}
+//             </li>
+//           );
+//         })}
+//       </Box>
+//     );
+//   },
+// );
+
+// export default EmployeePositionChart;
+
 import { Box } from "@mui/material";
-import { memo } from "react";
+import { memo, useMemo } from "react";
 
 import type { DataList } from "../../../../utils/buildHierarchy";
-import type {
-  DataPositions,
-  PositionNode,
-} from "../../../position/position.type";
-
 import styles from "./EmployeePositionChart.module.scss";
 
-const EmployeePositionChart = memo(({ nodes }: { nodes: PositionNode[] }) => {
-  return (
-    <Box component="ul" className={styles.tree}>
-      {nodes.map((node: DataList<DataPositions>) => {
-        const displayText =
-          node.employees.length > 0
-            ? `${node.title} (${node.employees[0].firstName} ${node.employees[0].lastName})`
+import type { PositionWithEmployee } from "../../utils/getEmployeePosition";
+import type { EmployeeData } from "../../employee.type";
+
+type EmployeePositionChartProps = {
+  nodes: DataList<PositionWithEmployee>[];
+  employees: EmployeeData[];
+};
+
+const EmployeePositionChart = memo(
+  ({ nodes, employees }: EmployeePositionChartProps) => {
+    const employeeMap = useMemo(
+      () =>
+        new Map<number, EmployeeData>(
+          employees.map((employee) => [employee.id, employee]),
+        ),
+      [employees],
+    );
+
+    return (
+      <Box component="ul" className={styles.tree}>
+        {nodes.map((node) => {
+          const employeeId = node.employees?.[0]?.employeeId;
+
+          const employee = employeeId ? employeeMap.get(employeeId) : undefined;
+
+          const displayText = employee
+            ? `${node.title} (${employee.firstName} ${employee.lastName})`
             : node.title;
 
-        return (
-          <li key={node.id}>
-            <Box className={styles.employeeNode} title={displayText}>
-              {displayText}
-            </Box>
+          return (
+            <li key={node.id}>
+              <Box className={styles.employeeNode} title={displayText}>
+                {displayText}
+              </Box>
 
-            {node.children?.length > 0 && (
-              <EmployeePositionChart nodes={node.children} />
-            )}
-          </li>
-        );
-      })}
-    </Box>
-  );
-});
+              {node.children.length > 0 && (
+                <EmployeePositionChart
+                  nodes={node.children}
+                  employees={employees}
+                />
+              )}
+            </li>
+          );
+        })}
+      </Box>
+    );
+  },
+);
+
+EmployeePositionChart.displayName = "EmployeePositionChart";
 
 export default EmployeePositionChart;

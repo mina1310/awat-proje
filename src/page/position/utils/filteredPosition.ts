@@ -1,6 +1,9 @@
-import type { PositionNode } from "../page/position/position.type";
+import type { PositionWithEmployee } from "../page/employee/utils/getEmployeePosition";
+import type { DataList } from "./buildHierarchy";
 
-const filteredPosition = (nodes: PositionNode[]): PositionNode[] => {
+const filteredPosition = (
+  nodes: DataList<PositionWithEmployee>[],
+): DataList<PositionWithEmployee>[] => {
   return nodes
     .map((node) => {
       const filteredChildren = filteredPosition(node.children);
@@ -9,7 +12,7 @@ const filteredPosition = (nodes: PositionNode[]): PositionNode[] => {
       if (!targetNode) return null;
       return { ...node, children: filteredChildren };
     })
-    .filter((node): node is PositionNode => node !== null);
+    .filter((node): node is DataList<PositionWithEmployee> => node !== null);
 };
 
 export default filteredPosition;
