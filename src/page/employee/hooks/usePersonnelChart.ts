@@ -1,9 +1,11 @@
 import { useMemo } from "react";
 import buildHierarchy from "../../../utils/buildHierarchy";
 import usePositions from "../../position/hooks/usePositions";
-import { getEmployeePosition } from "../utils/getEmployeePosition";
+
 import { useEmployees } from "./useEmployees";
-import filteredPosition from "../../../utils/filteredPosition";
+
+import { getEmployeePosition } from "../../position/utils/getEmployeePosition";
+import filteredPosition from "../../position/utils/filteredPosition";
 
 export const usePersonnelChart = () => {
   const {
