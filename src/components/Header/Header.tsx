@@ -43,7 +43,6 @@ export const Header = () => {
           <Avatar
             className={styles.avatar}
             sx={{
-              bgcolor: "primary.main",
               width: 36,
               height: 36,
             }}

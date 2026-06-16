@@ -13,7 +13,7 @@
     "userName": "mk1364",
     "mobileNumber": "09139794810",
     "id": 2,
-    "positions":[{"id": 2}]
+    "positions":[{"id": 2},{"id": 6}]
   },
   {
     "firstName": "رضا",
@@ -37,7 +37,7 @@
     "userName": "jk",
     "mobileNumber": "09130445810",
     "id": 5,
-    "positions":[{"id": 6}]
+    "positions":[]
   },
   {
     "firstName": "هلن",

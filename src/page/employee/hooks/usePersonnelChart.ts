@@ -6,6 +6,7 @@ import { useEmployees } from "./useEmployees";
 
 import { getEmployeePosition } from "../../position/utils/getEmployeePosition";
 import filteredPosition from "../../position/utils/filteredPosition";
+import type { EmployeeData } from "../employee.type";
 
 export const usePersonnelChart = () => {
   const {
@@ -18,6 +19,15 @@ export const usePersonnelChart = () => {
     loading: employeeLoading,
     error: employeeError,
   } = useEmployees();
+
+  const employeeMap = useMemo(
+    () =>
+      new Map<number, EmployeeData>(
+        employeeItems.map((employee) => [employee.id, employee]),
+      ),
+    [employeeItems],
+  );
+
   const personnelChartData = useMemo(() => {
     const positionsWithEmployee = getEmployeePosition(
       positionsItems,
@@ -39,6 +49,6 @@ export const usePersonnelChart = () => {
     personnelChartData,
     error,
     loading,
-    employeeItems,
+    employeeMap,
   };
 };

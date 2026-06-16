@@ -6,7 +6,6 @@
 .toolbar {
   min-height: 64px;
   padding-inline: 24px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,21 +27,20 @@
   display: flex;
   align-items: center;
   gap: 12px;
-
   min-width: fit-content;
 }
 
 .notification {
   cursor: pointer;
-
+  color: var( --color-error);
   transition: transform 0.2s ease;
-
   &:hover {
     transform: translateY(-2px);
   }
 }
 
 .avatar {
+  background-color:var(--color-primary);
   font-size: 14px;
   font-weight: 700;
 }

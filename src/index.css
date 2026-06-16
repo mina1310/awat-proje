@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap");
 
-* {
+*,
+::before,
+::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,4 +18,21 @@ body,
 body {
   font-family: "Vazirmatn", sans-serif;
   direction: rtl;
+}
+:root {
+  --color-primary: #2563eb;
+  --color-primary-light: #60a5fa;
+  --color-primary-dark: #1d4ed8;
+
+  --color-text-primary: #1e293b;
+  --color-text-secondary: #64748b;
+
+  --color-background: #f8fafc;
+  --color-paper: #ffffff;
+
+  --color-divider: #e2e8f0;
+
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-error: #dc2626;
 }
