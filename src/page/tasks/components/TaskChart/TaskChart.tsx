@@ -1,126 +1,135 @@
-// import { memo } from "react";
 // import type { TaskNode } from "../../task.type";
-// const TaskChart: React.FC<{ nodes: TaskNode[] }> = ({ nodes }) => {
-//   const renderRows = (nodes: TaskNode[]) => {
-//     return nodes.map((node: TaskNode) => (
-//       <li key={node.id} style={{ marginBottom: "8px" }}>
-//         <div
-//           style={{
-//             padding: "10px",
-//             backgroundColor:
-//               node.status === "انجام شده" ? "#e8f5e9" : "#fff3e0",
-//             borderRadius: "8px",
-//             border: "1px solid #e0e0e0",
-//             display: "flex",
-//             alignItems: "center",
-//             gap: "12px",
-//             flexWrap: "wrap",
-//           }}
-//         >
-//           <span
-//             style={{
-//               backgroundColor: "#688cb1",
-//               color: "white",
-//               padding: "4px 8px",
-//               borderRadius: "4px",
-//               minWidth: "50px",
-//               textAlign: "center",
-//             }}
-//           >
-//             {node.id}
-//           </span>
-//           <span style={{ flex: 1 }}>{node.title}</span>
 
-//           <span
-//             style={{
-//               color: node.status === "انجام شده" ? "green" : "orange",
-//               fontSize: "13px",
-//               minWidth: "100px",
-//               textAlign: "center",
-//             }}
+// interface Props {
+//   nodes: TaskNode[];
+// }
+
+// import { memo, useState } from "react";
+
+// import {
+//   IconButton,
+//   Table,
+//   TableBody,
+//   TableCell,
+//   TableContainer,
+//   TableHead,
+//   TableRow,
+// } from "@mui/material";
+
+// import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+// import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+
+// import styles from "./TaskChart.module.scss";
+
+// export const TaskChart = memo(({ nodes }: Props) => {
+//   const [openNodes, setOpenNodes] = useState<Set<string>>(new Set());
+
+//   const toggleNode = (id: string) => {
+//     setOpenNodes((prev) => {
+//       const next = new Set(prev);
+
+//       if (next.has(id)) {
+//         next.delete(id);
+//       } else {
+//         next.add(id);
+//       }
+
+//       return next;
+//     });
+//   };
+
+//   const renderRows = (nodes: TaskNode[], level = 0): React.ReactNode[] => {
+//     return nodes.map((node) => {
+//       const hasChildren = node.children.length > 0;
+//       const isOpen = openNodes.has(node.id);
+
+//       return [
+//         <TableRow
+//           key={node.id}
+//           className={
+//             node.status === "انجام شده" ? styles.completed : styles.pending
+//           }
+//         >
+//           <TableCell width={50}>
+//             {hasChildren && (
+//               <IconButton size="small" onClick={() => toggleNode(node.id)}>
+//                 {isOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+//               </IconButton>
+//             )}
+//           </TableCell>
+
+//           <TableCell className={styles.id}>
+//             <span
+//               className={styles.idIndent}
+//               style={{ paddingRight: `${level * 25}px` }}
+//             >
+//               {node.id}
+//             </span>
+//           </TableCell>
+
+//           <TableCell className={styles.title}>{node.title}</TableCell>
+
+//           <TableCell
+//             className={
+//               node.status === "انجام شده" ? styles.success : styles.warning
+//             }
 //           >
 //             {node.status === "انجام شده" ? "✅ انجام شده" : "⏳ انجام نشده"}
-//           </span>
+//           </TableCell>
 
-//           <span
-//             style={{
-//               color: "#555",
-//               minWidth: "150px",
-//               textAlign: "center",
-//             }}
-//           >
+//           <TableCell className={styles.date}>
 //             {node.done_date
 //               ? new Date(node.done_date).toLocaleDateString("fa-IR")
 //               : "-"}
-//           </span>
-//           <span
-//             style={{
-//               color: "#555",
-//               minWidth: "150px",
-//               textAlign: "center",
-//             }}
-//           >
-//             {node.assignee}
-//           </span>
-//         </div>
+//           </TableCell>
 
-//         {node.children && node.children.length > 0 && (
-//           <div style={{ marginRight: "10px", marginTop: "8px" }}>
-//             {renderRows(node.children)}
-//           </div>
-//         )}
-//       </li>
-//     ));
+//           <TableCell className={styles.assignee}>{node.assignee}</TableCell>
+//         </TableRow>,
+
+//         ...(hasChildren && isOpen ? renderRows(node.children, level + 1) : []),
+//       ];
+//     });
 //   };
 
 //   return (
-//     <div style={{ width: "100%" }}>
-//       <div
-//         style={{
-//           display: "flex",
-//           alignItems: "center",
-//           gap: "12px",
-//           padding: "10px",
-//           marginBottom: "16px",
-//           backgroundColor: "#f5f5f5",
-//           borderRadius: "8px",
-//           border: "1px solid #e0e0e0",
-//           fontFamily: "sans-serif",
-//           direction: "rtl",
-//           fontWeight: "bold",
-//           fontSize: "14px",
-//           flexWrap: "wrap",
-//         }}
-//       >
-//         <span style={{ minWidth: "50px", textAlign: "center" }}>شناسه</span>
-//         <span style={{ flex: 1 }}>وظیفه</span>
-//         <span style={{ minWidth: "100px", textAlign: "center" }}>وضعیت</span>
-//         <span style={{ minWidth: "150px", textAlign: "center" }}>
-//           تاریخ انجام
-//         </span>
-//         <span style={{ minWidth: "150px", textAlign: "center" }}>مسئول</span>
-//       </div>
+//     <TableContainer>
+//       <Table className={styles.wrapper}>
+//         <TableHead>
+//           <TableRow className={styles.header}>
+//             <TableCell />
 
-//       <ul
-//         style={{
-//           listStyle: "none",
-//           padding: 0,
-//           margin: 0,
-//           fontFamily: "sans-serif",
-//           direction: "rtl",
-//           fontWeight: "bold",
-//           fontSize: "12px",
-//         }}
-//       >
-//         {renderRows(nodes)}
-//       </ul>
-//     </div>
+//             <TableCell className={styles.id}>شناسه</TableCell>
+
+//             <TableCell className={styles.title}>وظیفه</TableCell>
+
+//             <TableCell className={styles.status}>وضعیت</TableCell>
+
+//             <TableCell className={styles.date}>تاریخ انجام</TableCell>
+
+//             <TableCell className={styles.assignee}>مسئول</TableCell>
+//           </TableRow>
+//         </TableHead>
+
+//         <TableBody>{renderRows(nodes)}</TableBody>
+//       </Table>
+//     </TableContainer>
 //   );
-// };
+// });
 
-// export default memo(TaskChart);
+import { memo, useState } from "react";
 
-import { memo } from "react";
+import {
+  IconButton,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
+
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 import type { TaskNode } from "../../task.type";
 
@@ -131,57 +140,104 @@ interface Props {
 }
 
 export const TaskChart = memo(({ nodes }: Props) => {
-  const renderRows = (nodes: TaskNode[]) => {
-    return nodes.map((node) => (
-      <li key={node.id} className={styles.listItem}>
-        <div
-          className={`${styles.taskCard} ${
-            node.status === "انجام شده" ? styles.completed : styles.pending
-          }`}
+  const [openNodes, setOpenNodes] = useState<Set<string>>(new Set());
+
+  const toggleNode = (id: string) => {
+    setOpenNodes((prev) => {
+      const next = new Set(prev);
+
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+
+      return next;
+    });
+  };
+
+  const renderRows = (nodes: TaskNode[], level = 0): React.ReactNode[] => {
+    return nodes.flatMap((node) => {
+      const hasChildren = node.children.length > 0;
+      const isOpen = openNodes.has(node.id);
+
+      return [
+        <TableRow
+          key={node.id}
+          className={
+            node.status === "انجام شده"
+              ? styles.completedRow
+              : styles.pendingRow
+          }
         >
-          <span className={styles.id}>{node.id}</span>
+          <TableCell className={styles.expandColumn}>
+            {hasChildren && (
+              <IconButton size="small" onClick={() => toggleNode(node.id)}>
+                {isOpen ? <KeyboardArrowDownIcon /> : <KeyboardArrowUpIcon />}
+              </IconButton>
+            )}
+          </TableCell>
 
-          <span className={styles.title}>{node.title}</span>
+          <TableCell className={styles.idColumn}>{node.id}</TableCell>
 
-          <span
-            className={`${styles.status} ${
-              node.status === "انجام شده" ? styles.success : styles.warning
-            }`}
+          <TableCell className={styles.titleColumn}>
+            <span
+              className={styles.titleIndent}
+              style={{
+                marginRight: `${level * 50}px`,
+              }}
+            >
+              {node.title}{" "}
+            </span>
+          </TableCell>
+
+          <TableCell
+            className={
+              node.status === "انجام شده"
+                ? styles.doneStatus
+                : styles.pendingStatus
+            }
           >
             {node.status === "انجام شده" ? "✅ انجام شده" : "⏳ انجام نشده"}
-          </span>
+          </TableCell>
 
-          <span className={styles.date}>
+          <TableCell className={styles.dateColumn}>
             {node.done_date
               ? new Date(node.done_date).toLocaleDateString("fa-IR")
               : "-"}
-          </span>
+          </TableCell>
 
-          <span className={styles.assignee}>{node.assignee}</span>
-        </div>
+          <TableCell className={styles.assigneeColumn}>
+            {node.assignee}
+          </TableCell>
+        </TableRow>,
 
-        {node.children?.length > 0 && (
-          <div className={styles.children}>{renderRows(node.children)}</div>
-        )}
-      </li>
-    ));
+        ...(hasChildren && isOpen ? renderRows(node.children, level + 1) : []),
+      ];
+    });
   };
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.header}>
-        <span className={styles.id}>شناسه</span>
+    <TableContainer className={styles.container}>
+      <Table className={styles.table}>
+        <TableHead>
+          <TableRow className={styles.headerRow}>
+            <TableCell className={styles.expand} />
 
-        <span className={styles.title}>وظیفه</span>
+            <TableCell className={styles.id}>شناسه</TableCell>
 
-        <span className={styles.status}>وضعیت</span>
+            <TableCell className={styles.title}>وظیفه</TableCell>
 
-        <span className={styles.date}>تاریخ انجام</span>
+            <TableCell className={styles.status}>وضعیت</TableCell>
 
-        <span className={styles.assignee}>مسئول</span>
-      </div>
+            <TableCell className={styles.date}>تاریخ انجام</TableCell>
 
-      <ul className={styles.list}>{renderRows(nodes)}</ul>
-    </div>
+            <TableCell className={styles.assignee}>مسئول</TableCell>
+          </TableRow>
+        </TableHead>
+
+        <TableBody>{renderRows(nodes)}</TableBody>
+      </Table>
+    </TableContainer>
   );
 });

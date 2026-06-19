@@ -162,26 +162,10 @@ export const theme = createTheme({
       },
     },
 
-    MuiOutlinedInput: {
-      styleOverrides: {
-        root: {
-          borderRadius: 10,
-        },
-      },
-    },
-
     MuiCard: {
       styleOverrides: {
         root: {
           borderRadius: 12,
-        },
-      },
-    },
-
-    MuiChip: {
-      styleOverrides: {
-        root: {
-          borderRadius: 8,
         },
       },
     },
