@@ -20,13 +20,13 @@ export const usePersonnelChart = () => {
     error: employeeError,
   } = useEmployees();
 
-  const employeeMap = useMemo(
-    () =>
-      new Map<number, EmployeeData>(
-        employeeItems.map((employee) => [employee.id, employee]),
-      ),
-    [employeeItems],
-  );
+  const employeeMap = useMemo(() => {
+    const map = new Map<number, EmployeeData>();
+    for (const employee of employeeItems) {
+      map.set(employee.id, employee);
+    }
+    return map;
+  }, [employeeItems]);
 
   const personnelChartData = useMemo(() => {
     const positionsWithEmployee = getEmployeePosition(

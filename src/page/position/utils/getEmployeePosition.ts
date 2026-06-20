@@ -9,19 +9,19 @@ export const getEmployeePosition = (
   positions: DataPositions[],
   employees: EmployeeData[],
 ): PositionWithEmployee[] => {
-  const map = new Map<number, EmployeeData>();
+  const map = new Map<number, number>();
   for (const item of employees) {
     for (let i = 0; i < item.positions.length; i++) {
-      map.set(item.positions[i].id, { ...item });
+      map.set(item.positions[i].id, item.id);
     }
   }
 
   return positions.map((position) => {
-    const employeeData = map.get(position.id);
+    const employeeId = map.get(position.id);
 
     return {
       ...position,
-      employees: employeeData ? [{ employeeId: employeeData.id }] : null,
+      employees: employeeId ? [{ employeeId }] : null,
     };
   });
 };
