@@ -21,7 +21,7 @@ export const getEmployeePosition = (
 
     return {
       ...position,
-      employees: employeeId ? [{ employeeId }] : null,
+      employees: employeeId !== undefined ? [{ employeeId }] : null,
     };
   });
 };

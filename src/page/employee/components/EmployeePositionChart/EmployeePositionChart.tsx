@@ -17,7 +17,7 @@ export const EmployeePositionChart = memo(
     return (
       <Box component="ul" className={styles.tree}>
         {nodes.map((node) => {
-          const employeeId = node.employees?.[0].employeeId;
+          const employeeId = node.employees?.[0]?.employeeId;
 
           const employee =
             employeeId !== undefined ? employeeMap.get(employeeId) : undefined;
