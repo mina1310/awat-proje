@@ -13,7 +13,7 @@ const useTasks = () => {
   useEffect(() => {
     dispatch(getTasks());
   }, [dispatch]);
-  console.log("Original tasks:", tasks);
+
   return {
     tasks: useMemo(() => buildHierarchy<DataTasks>(tasks), [tasks]),
     error,

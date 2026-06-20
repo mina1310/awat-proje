@@ -147,14 +147,6 @@ export const theme = createTheme({
       },
     },
 
-    MuiAvatar: {
-      styleOverrides: {
-        root: {
-          fontWeight: 700,
-        },
-      },
-    },
-
     MuiTextField: {
       defaultProps: {
         size: "small",
@@ -189,36 +181,6 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 12,
-        },
-      },
-    },
-
-    MuiTabs: {
-      styleOverrides: {
-        root: {
-          borderBottom: "1px solid #e2e8f0",
-        },
-      },
-    },
-
-    MuiTab: {
-      styleOverrides: {
-        root: {
-          minHeight: 48,
-
-          fontSize: "0.95rem",
-
-          fontWeight: 600,
-
-          color: "#64748b",
-
-          textTransform: "none",
-
-          transition: "all 0.2s ease",
-
-          "&:hover": {
-            color: "#2563eb",
-          },
         },
       },
     },

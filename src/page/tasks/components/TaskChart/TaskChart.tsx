@@ -65,7 +65,7 @@ export const TaskChart = memo(({ nodes }: Props) => {
             <span
               className={styles.titleIndent}
               style={{
-                marginRight: `${level * 50}px`,
+                paddingRight: `${level * 50}px`,
               }}
             >
               {node.title}{" "}
@@ -104,16 +104,11 @@ export const TaskChart = memo(({ nodes }: Props) => {
         <TableHead>
           <TableRow className={styles.headerRow}>
             <TableCell className={styles.expand} />
-
-            <TableCell className={styles.id}>شناسه</TableCell>
-
-            <TableCell className={styles.title}>وظیفه</TableCell>
-
-            <TableCell className={styles.status}>وضعیت</TableCell>
-
-            <TableCell className={styles.date}>تاریخ انجام</TableCell>
-
-            <TableCell className={styles.assignee}>مسئول</TableCell>
+            <TableCell>شناسه</TableCell>
+            <TableCell align="center">وظیفه</TableCell>
+            <TableCell>وضعیت</TableCell>
+            <TableCell>تاریخ انجام</TableCell>
+            <TableCell>مسئول</TableCell>
           </TableRow>
         </TableHead>
 
