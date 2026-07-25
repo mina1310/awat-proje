@@ -5,7 +5,7 @@
     "userName": "mk",
     "mobileNumber": "09140853348",
     "id": 1,
-    "positions":[{"id": 1}]
+    "positions":[{"id": 1,"title":"مدیر عامل","slot":[0]}]
   },
   {
     "firstName": "مریم",
@@ -13,7 +13,7 @@
     "userName": "mk1364",
     "mobileNumber": "09139794810",
     "id": 2,
-    "positions":[{"id": 2}]
+    "positions":[{"id": 2,"title":"قائم مقام مدیر عامل","slot":[0,0]},{"id": 7,"title":"معاون عملیات","slot":[0,0]}]
   },
   {
     "firstName": "رضا",
@@ -21,7 +21,7 @@
     "userName": "rk",
     "mobileNumber": "09132803780",
     "id": 3,
-    "positions":[]
+    "positions":[{"id": 8,"title":"رییس واحد","slot":[0,0,0]}]
   },
   {
     "firstName": "علیرضا",
@@ -29,7 +29,7 @@
     "userName": "Ak",
     "mobileNumber": "09130052690",
     "id": 4,
-    "positions":[]
+    "positions":[{"id": 8,"title":"رییس واحد","slot":[0,0,1]}]
   },
   {
     "firstName": "جاوید",
@@ -45,7 +45,7 @@
     "userName": "hk",
     "mobileNumber": "09140853121",
     "id": 6,
-    "positions":[{"id": 7}]
+    "positions":[]
   },
   {
     "firstName": "سعید",
@@ -53,7 +53,7 @@
     "userName": "sk",
     "mobileNumber": "09140853349",
     "id": 7,
-    "positions":[{"id": 5}]
+    "positions":[{"id": 5,"title":"معاون اداری","slot":[0,0]}]
   },
   {
     "firstName": "سهیل",
@@ -61,7 +61,7 @@
     "userName": "sk1384",
     "mobileNumber": "09140853344",
     "id": 8,
-    "positions":[{"id": 10}]
+    "positions":[{"id": 10,"title":"کارشناس پروژه","slot":[0,0,1,0,0]}]
   },
   {
     "firstName": "الهه",
@@ -69,7 +69,7 @@
     "userName": "ak1364",
     "mobileNumber": "09140853347",
     "id": 9,
-    "positions":[{"id": 6}]
+    "positions":[{"id": 6,"title":"کارشناس اداری","slot":[0,0,0]}]
   },
   {
     "firstName": "کارن",
@@ -77,6 +77,6 @@
     "userName": "Kk01",
     "mobileNumber": "09140853353",
     "id": 10,
-    "positions":[{"id": 9}]
+    "positions":[{"id": 9,"title":"مدیر پروژه","slot":[0,0,1,0]}]
   }
 ]

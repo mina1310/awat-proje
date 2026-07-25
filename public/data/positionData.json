@@ -22,7 +22,7 @@
     "title": "حسابدار",
     "id": 4,
     "parentId": 3,
-    "capacity": 1,
+    "capacity": 2,
     "organization": "آوات",
     "status": "active"
     
@@ -31,7 +31,7 @@
     "title": "معاون اداری",
     "id": 5,
     "parentId": 1,
-    "capacity": 1,
+    "capacity": 2,
     "organization": "آوات",
     "status": "active"
    
@@ -57,7 +57,7 @@
     "title": "رییس واحد",
     "id": 8,
     "parentId": 7,
-    "capacity": 1,
+    "capacity": 3,
     "organization": "آوات",
     "status": "active"
     

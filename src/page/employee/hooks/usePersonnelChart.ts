@@ -33,6 +33,7 @@ export const usePersonnelChart = () => {
       positionsItems,
       employeeItems,
     );
+    console.log(positionsWithEmployee);
     const convertToHierarchy = buildHierarchy(positionsWithEmployee);
     return filteredPosition(convertToHierarchy);
   }, [positionsItems, employeeItems]);
