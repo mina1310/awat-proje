@@ -4,11 +4,9 @@ import usePositions from "../../position/hooks/usePositions";
 import { useEmployees } from "./useEmployees";
 
 import { getEmployeePosition } from "../../position/utils/getEmployeePosition";
-// import filteredPosition from "../../position/utils/filteredPosition";
+import filteredPosition from "../../position/utils/filteredPosition";
 import type { EmployeeData } from "../employee.type";
-// import buildHierarchyPersonnel from "../utils/buildHierarchyPersonnel";
-import { buildPositionTree } from "../../position/utils/buildPositionTree";
-import { createEmployeePositionMap } from "../utils/createEmployeePositionMap";
+import buildHierarchyPersonnel from "../utils/buildHierarchyPersonnel";
 
 export const usePersonnelChart = () => {
   const {
@@ -31,26 +29,13 @@ export const usePersonnelChart = () => {
   }, [employeeItems]);
 
   const personnelChartData = useMemo(() => {
-    console.log("positionsItems:", positionsItems);
-    console.log("employeeItems:", employeeItems);
-    if (positionLoading || employeeLoading) {
-      return [];
-    }
-
-    if (positionsItems.length === 0 || employeeItems.length === 0) {
-      return [];
-    }
     const positionsWithEmployee = getEmployeePosition(
       positionsItems,
       employeeItems,
     );
-    console.log("positionsWithEmployee:", positionsWithEmployee);
-    const convertToTree = buildPositionTree(
-      positionsWithEmployee,
-      createEmployeePositionMap,
-    );
 
-    return convertToTree;
+    const convertToHierarchy = buildHierarchyPersonnel(positionsWithEmployee);
+    return filteredPosition(convertToHierarchy);
   }, [positionsItems, employeeItems]);
   const loading = {
     position: positionLoading,

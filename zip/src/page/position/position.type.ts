@@ -9,11 +9,3 @@ export interface DataPositions {
   status: "active";
 }
 export type PositionNode = DataList<DataPositions>;
-export type TreeNode<T extends DataPositions> = {
-  node: T;
-  level: number;
-};
-export type CreateTreeStrategy<T extends DataPositions> = {
-  root: T;
-  getChildren: (node: T) => T[];
-};

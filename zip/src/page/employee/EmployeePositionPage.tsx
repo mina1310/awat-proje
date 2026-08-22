@@ -1,4 +1,4 @@
-import { PositionChart } from "../position/components/PositionChart/PositionChart copy";
+import { EmployeePositionChart } from "./components/EmployeePositionChart";
 import { usePersonnelChart } from "./hooks/usePersonnelChart";
 
 const EmployeePositionPage = () => {
@@ -18,7 +18,10 @@ const EmployeePositionPage = () => {
   }
 
   return (
-    <PositionChart nodes={personnelChartData} employeeData={employeeMap} />
+    <EmployeePositionChart
+      nodes={personnelChartData}
+      employeeMap={employeeMap}
+    />
   );
 };
 export default EmployeePositionPage;

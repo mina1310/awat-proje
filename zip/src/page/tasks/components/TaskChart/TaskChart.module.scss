@@ -1,0 +1,94 @@
+.container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 900px;
+  direction: rtl;
+}
+
+
+.headerRow {
+  background: var(--color-background)
+}
+
+.headerRow th {
+  font-weight: 700;
+  color: var(--color-text-secondary);
+ 
+}
+
+.expandColumn {
+  width: 56px;
+  text-align: center;
+}
+
+.idColumn {
+  width: 120px;
+  text-align: right;
+ 
+}
+
+.titleColumn {
+  min-width: 300px;
+  text-align: center;
+  
+}
+
+.statusColumn {
+  width: 160px;
+  text-align: center;
+}
+
+.dateColumn {
+  width: 150px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.assigneeColumn {
+  width: 150px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.completedRow {
+  background:var(--color-success);
+}
+
+.pendingRow {
+  background: var(--color-pending);
+}
+
+.completedRow:hover,
+.pendingRow:hover {
+  background:var(--color-paper);
+}
+
+.titleIndent {
+  
+  color:var(--color-text-primary);
+  font-weight: 600;
+display: flex;
+  justify-content: center;
+}
+
+
+.doneStatus {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.pendingStatus {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.table :global(.MuiTableCell-root) {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 5px;
+  padding-left: 2px;
+}

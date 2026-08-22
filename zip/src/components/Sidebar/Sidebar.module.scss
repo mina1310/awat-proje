@@ -1,0 +1,40 @@
+.drawer {
+  :global(.MuiDrawer-paper) {
+    margin-top: 64px;
+    height: calc(100% - 64px);
+    overflow-x: hidden;
+    border-left: 1px solid var(--color-divider);
+   
+  }
+}
+
+.container {
+  padding: 16px;
+}
+
+.title {
+  text-align: center;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  color:var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.menu {
+  direction: rtl;
+}
+
+
+.icon {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+:global(.MuiListItemText-primary) {
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: right;
+}

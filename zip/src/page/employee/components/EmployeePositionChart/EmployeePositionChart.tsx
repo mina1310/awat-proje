@@ -6,6 +6,7 @@ import styles from "./EmployeePositionChart.module.scss";
 import type { EmployeeData } from "../../employee.type";
 import type { DataList } from "../../../../utils/buildHierarchy";
 import type { PositionWithEmployee } from "../../../position/utils/getEmployeePosition";
+import { createKey } from "../../utils/createKey";
 
 type EmployeePositionChartProps = {
   nodes: DataList<PositionWithEmployee>[];
@@ -27,7 +28,7 @@ export const EmployeePositionChart = memo(
             : node.title;
 
           return (
-            <li key={node.id}>
+            <li key={createKey(node.id, node.employees?.[0].slot ?? null)}>
               <Box className={styles.employeeNode} title={displayText}>
                 {displayText}
               </Box>
