@@ -1,84 +1,142 @@
 [
   {
-    "firstName": "مینا",
-    "lastName": "کاویانی",
-    "userName": "mk",
-    "mobileNumber": "09140853348",
-    "id": 1,
-    "positions":[{"id": 1,"slot":[0]}]
-  },
-   {
-    "firstName": "مریم",
-    "lastName": "کاویانی",
-    "userName": "mk1364",
-    "mobileNumber": "09139794810",
-    "id": 2,
-    "positions":[{"id": 2,"slot":[0,0]},{"id": 7,"slot":[0,0]},{"id": 8,"slot":[0,0,0]}]
-  },
- 
-  {
-    "firstName": "رضا",
-    "lastName": "کاویانی",
-    "userName": "rk",
-    "mobileNumber": "09132803780",
-    "id": 3,
-    "positions":[{"id": 8,"slot":[0,0,2]}]
+    "user": {
+      "firstName": "مینا",
+      "lastName": "کاویانی",
+      "userName": "mk",
+      "mobileNumber": "09140853348",
+      "id": 1
+    },
+    "positions": [
+      {
+        "id": 1,
+        "slot": [0]
+      }
+    ]
   },
   {
-    "firstName": "علیرضا",
-    "lastName": "کاویانی",
-    "userName": "Ak",
-    "mobileNumber": "09130052690",
-    "id": 4,
-    "positions":[{"id": 8,"slot":[0,0,1]},{ "id": 4, "slot":[0,0,0]}]
-  },
-  
-  {
-    "firstName": "جاوید",
-    "lastName": "کاویانی",
-    "userName": "jk",
-    "mobileNumber": "09130445810",
-    "id": 5,
-    "positions":[{ "id": 3, "slot":[0,0]}]
-  },
-  {
-    "firstName": "هلن",
-    "lastName": "کاویانی",
-    "userName": "hk",
-    "mobileNumber": "09140853121",
-    "id": 6,
-    "positions":[{ "id": 2, "slot":[0,1]}]
+    "user": {
+      "firstName": "مریم",
+      "lastName": "کاویانی",
+      "userName": "mk1364",
+      "mobileNumber": "09139794810",
+      "id": 2
+    },
+    "positions": [
+      {
+        "id": 2,
+        "slot": [0, 0]
+      },
+      {
+        "id": 7,
+        "slot": [0, 0]
+      },
+      {
+        "id": 8,
+        "slot": [0, 0,2]
+      }
+    ]
   },
   {
-    "firstName": "سعید",
-    "lastName": "کاویانی",
-    "userName": "sk",
-    "mobileNumber": "09140853349",
-    "id": 7,
-    "positions":[{"id": 5,"slot":[0,0]},{ "id": 4, "slot":[0,0,1]}]
+    "user": {
+      "firstName": "رضا",
+      "lastName": "کاویانی",
+      "userName": "rk",
+      "mobileNumber": "09132803780",
+      "id": 3
+    },
+    "positions": [
+      {
+        "id": 8,
+        "slot": [0, 0, 0]
+      }
+    ]
   },
   {
-    "firstName": "سهیل",
-    "lastName": "کاویانی",
-    "userName": "sk1384",
-    "mobileNumber": "09140853344",
-    "id": 8,
-    "positions":[{"id": 10,"slot":[0,0,1,0,0]}]
+    "user":null,
+    "positions": [
+      {
+        "id": 8,
+        "slot": [0, 0, 1]
+      }
+    
+    ]
   },
   {
-    "firstName": "الهه",
-    "lastName": "کاویانی",
-    "userName": "ak1364",
-    "mobileNumber": "09140853347",
-    "id": 9,
-    "positions":[{"id": 6,"slot":[0,0,0]}]
+    "user": {
+      "firstName": "جاوید",
+      "lastName": "کاویانی",
+      "userName": "jk",
+      "mobileNumber": "09130445810",
+      "id": 5
+    },
+    "positions": [
+      {
+        "id": 3,
+        "slot": [0, 0]
+      }
+    ]
   },
   {
-    "firstName": "کارن",
-    "lastName": "کاویانی",
-    "userName": "Kk01",
-    "mobileNumber": "09140853353",
-    "id": 10,
-    "positions":[{"id": 9,"slot":[0,0,1,0]}]
+    "user":null,
+    "positions": [
+      {
+        "id": 2,
+        "slot": [0, 1]
+      }
+    ]
+  },
+  {
+    "user": {
+      "firstName": "سعید",
+      "lastName": "کاویانی",
+      "userName": "sk",
+      "mobileNumber": "09140853349",
+      "id": 7
+    },
+    "positions": [
+      {
+        "id": 5,
+        "slot": [0, 0]
+      }
+    ]
+  },
+  {
+    "user": {
+      "firstName": "سهیل",
+      "lastName": "کاویانی",
+      "userName": "sk1384",
+      "mobileNumber": "09140853344",
+      "id": 8
+    },
+    "positions": []
+  },
+  {
+    "user": {
+      "firstName": "الهه",
+      "lastName": "کاویانی",
+      "userName": "ak1364",
+      "mobileNumber": "09140853347",
+      "id": 9
+    },
+    "positions": [
+      {
+        "id": 6,
+        "slot": [0, 0, 0]
+      }
+    ]
+  },
+  {
+    "user": {
+      "firstName": "کارن",
+      "lastName": "کاویانی",
+      "userName": "Kk01",
+      "mobileNumber": "09140853353",
+      "id": 10
+    },
+    "positions": [  {
+        "id": 9,
+        "slot": [0,0,0,0]
+      }]
   }
 ]

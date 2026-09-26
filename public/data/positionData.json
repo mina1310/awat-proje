@@ -24,7 +24,7 @@
     "parentId": 3,
     "capacity": 2,
     "organization": "آوات",
-    "status": "active"
+    "status": "inactive"
     
   },
   {
@@ -87,7 +87,7 @@
     "parentId": 9,
     "capacity": 1,
     "organization": "آوات",
-    "status": "active"
+    "status": "inactive"
    
   }
 ]

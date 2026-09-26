@@ -1,13 +1,35 @@
-export type selectedPositionData = {
+import type { DataPositions } from "../position/position.type";
+import type { UserData } from "../user/user.type";
+
+export type SelectedPositionData = {
   id: number;
-  title: string;
   slot: number[];
 };
+
 export interface EmployeeData {
-  firstName: string;
-  lastName: string;
-  userName: string;
-  mobileNumber: string;
-  id: number;
-  positions: selectedPositionData[];
+  user: UserData | null;
+  positions: SelectedPositionData[];
 }
+
+export type PositionWithEmployee = DataPositions & {
+  employees:
+    | {
+        user: {
+          id: number | null;
+        };
+        slot: number[];
+        status: "success";
+      }[]
+    | null;
+};
+
+export type PositionWithUserEmployee = PositionWithEmployee & {
+  user: UserData | null;
+};
+
+export type StackItem = {
+  position: PositionWithEmployee;
+  slot: number[];
+  level: number;
+  isFake: boolean;
+};

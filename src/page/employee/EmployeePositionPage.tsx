@@ -1,8 +1,8 @@
-import { PositionChart } from "../position/components/PositionChart/PositionChart copy";
+import { PositionChart } from "../position/components/PositionChart/PositionChart";
 import { usePersonnelChart } from "./hooks/usePersonnelChart";
 
 const EmployeePositionPage = () => {
-  const { personnelChartData, error, loading, employeeMap } =
+  const { personnelChartData, error, loading, handleFiltered, isFiltered } =
     usePersonnelChart();
   if (loading.employee || loading.position) return <div>loading...</div>;
   if (error.employee || error.position) {
@@ -18,7 +18,11 @@ const EmployeePositionPage = () => {
   }
 
   return (
-    <PositionChart nodes={personnelChartData} employeeData={employeeMap} />
+    <PositionChart
+      nodes={personnelChartData}
+      onFilter={handleFiltered}
+      isFiltered={isFiltered}
+    />
   );
 };
 export default EmployeePositionPage;

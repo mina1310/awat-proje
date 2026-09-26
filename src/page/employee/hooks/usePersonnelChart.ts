@@ -1,14 +1,13 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import usePositions from "../../position/hooks/usePositions";
 
 import { useEmployees } from "./useEmployees";
 
-import { getEmployeePosition } from "../../position/utils/getEmployeePosition";
-// import filteredPosition from "../../position/utils/filteredPosition";
-import type { EmployeeData } from "../employee.type";
-// import buildHierarchyPersonnel from "../utils/buildHierarchyPersonnel";
-import { buildPositionTree } from "../../position/utils/buildPositionTree";
-import { createEmployeePositionMap } from "../utils/createEmployeePositionMap";
+import { getEmployeePosition } from "../utils/getEmployeePosition";
+
+import { buildEmployeePositionTree } from "../utils/buildEmployeePositionTree";
+import { buildFilteredEmployeePositionTree } from "../utils/buildFilteredEmployeePositionTree ";
+import { useUser } from "../../user/hooks/useUser";
 
 export const usePersonnelChart = () => {
   const {
@@ -16,23 +15,21 @@ export const usePersonnelChart = () => {
     loading: positionLoading,
     error: positionError,
   } = usePositions();
+
   const {
     employeeItems,
     loading: employeeLoading,
     error: employeeError,
   } = useEmployees();
+  const { getUserById } = useUser();
 
-  const employeeMap = useMemo(() => {
-    const map = new Map<number, EmployeeData>();
-    for (const employee of employeeItems) {
-      map.set(employee.id, employee);
-    }
-    return map;
-  }, [employeeItems]);
+  const [isFiltered, setIsFiltered] = useState(true);
+
+  const handleFiltered = () => {
+    setIsFiltered((prev) => !prev);
+  };
 
   const personnelChartData = useMemo(() => {
-    console.log("positionsItems:", positionsItems);
-    console.log("employeeItems:", employeeItems);
     if (positionLoading || employeeLoading) {
       return [];
     }
@@ -40,22 +37,28 @@ export const usePersonnelChart = () => {
     if (positionsItems.length === 0 || employeeItems.length === 0) {
       return [];
     }
+
     const positionsWithEmployee = getEmployeePosition(
       positionsItems,
       employeeItems,
     );
-    console.log("positionsWithEmployee:", positionsWithEmployee);
-    const convertToTree = buildPositionTree(
-      positionsWithEmployee,
-      createEmployeePositionMap,
-    );
 
-    return convertToTree;
-  }, [positionsItems, employeeItems]);
+    return isFiltered
+      ? buildFilteredEmployeePositionTree(positionsWithEmployee, getUserById)
+      : buildEmployeePositionTree(positionsWithEmployee, getUserById);
+  }, [
+    positionsItems,
+    employeeItems,
+    positionLoading,
+    employeeLoading,
+    isFiltered,
+  ]);
+
   const loading = {
     position: positionLoading,
     employee: employeeLoading,
   };
+
   const error = {
     position: positionError,
     employee: employeeError,
@@ -65,6 +68,7 @@ export const usePersonnelChart = () => {
     personnelChartData,
     error,
     loading,
-    employeeMap,
+    handleFiltered,
+    isFiltered,
   };
 };

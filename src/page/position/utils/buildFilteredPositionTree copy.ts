@@ -1,6 +1,6 @@
 import type { DataPositions, TreeNode } from "../position.type";
 
-export const buildPositionTree = (
+export const buildFilteredPositionTree = (
   positions: DataPositions[],
 ): TreeNode<DataPositions>[] => {
   const positionMap = new Map<string, DataPositions[]>();
@@ -32,10 +32,13 @@ export const buildPositionTree = (
     const children = positionMap.get(String(current.node.id));
     if (children) {
       for (let i = children.length - 1; i >= 0; i--) {
-        stack.push({
-          node: children[i],
-          level: current.level + 1,
-        });
+        const selectedChildren = children[i];
+        if (selectedChildren.status === "active") {
+          stack.push({
+            node: selectedChildren,
+            level: current.level + 1,
+          });
+        }
       }
     }
   }

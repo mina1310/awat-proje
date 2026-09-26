@@ -3,12 +3,14 @@ import { configureStore } from "@reduxjs/toolkit";
 import { positionSlice } from "../page/position/slice";
 import { taskSlice } from "../page/tasks/slice";
 import { employeeSlice } from "../page/employee/slice";
+import { userSlice } from "../page/user/slice";
 
 const store = configureStore({
   reducer: {
     position: positionSlice.reducer,
     tasks: taskSlice.reducer,
     employee: employeeSlice.reducer,
+    user: userSlice.reducer,
   },
 });
 export type AppDispatch = typeof store.dispatch;
